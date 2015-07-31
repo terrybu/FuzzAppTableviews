@@ -1,0 +1,6 @@
+framework module Pods_FuzzApp {
+  umbrella header "Pods-FuzzApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

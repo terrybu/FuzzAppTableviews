@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AFNetworking
 
 private let AllCellReuseIdentifier: String = "AllCell"
 
@@ -30,7 +31,7 @@ class AllViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                 println(error.localizedDescription)
                 return
             }
-            println(jsonResultArray.description)
+//            println(jsonResultArray.description)
             for dictObject in jsonResultArray {
                 if let dictionary = dictObject as? NSDictionary {
                     let newFuzz = FuzzObject()
@@ -59,14 +60,23 @@ class AllViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell : UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(AllCellReuseIdentifier) as? UITableViewCell
+        var cell : AllTableViewCell? = tableView.dequeueReusableCellWithIdentifier(AllCellReuseIdentifier) as? AllTableViewCell
         if (cell == nil) {
-            cell = UITableViewCell(style:.Default, reuseIdentifier:AllCellReuseIdentifier)
+            cell = AllTableViewCell(style:.Default, reuseIdentifier:AllCellReuseIdentifier)
         }
     
         let fuzzObjectForRow = fuzzDataArray[indexPath.row]
-        cell!.textLabel!.text = fuzzObjectForRow.data
+        cell!.idLabel.text = fuzzObjectForRow.id
+        cell!.dateLabel.text = fuzzObjectForRow.date
+        cell!.typeLabel.text = fuzzObjectForRow.type
+        if (fuzzObjectForRow.type == "image") {
+            cell!.imgView.setImageWithURL(NSURL(string: fuzzObjectForRow.data!))
+        }
+        else {
+            cell!.dataLabel.text = fuzzObjectForRow.data
+        }
         
+
         return cell!
     }
     

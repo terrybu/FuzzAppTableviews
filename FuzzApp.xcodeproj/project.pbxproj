@@ -16,6 +16,8 @@
 		D981506D1B6AF7CF00A79FFE /* TextTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981506C1B6AF7CF00A79FFE /* TextTableViewController.swift */; };
 		D981506F1B6AF81B00A79FFE /* ImagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981506E1B6AF81B00A79FFE /* ImagesTableViewController.swift */; };
 		D98150731B6AF8F000A79FFE /* FuzzObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98150721B6AF8F000A79FFE /* FuzzObject.swift */; };
+		D9FAF02C1B6BD12E00ABAF30 /* AllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FAF02B1B6BD12E00ABAF30 /* AllTableViewCell.swift */; };
+		F31D7F27BE431BAC7493746A /* Pods_FuzzApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00047EC842DE6A285737FF7E /* Pods_FuzzApp.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00047EC842DE6A285737FF7E /* Pods_FuzzApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FuzzApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34330829CBC5A821B7640C6C /* Pods-FuzzApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FuzzApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FuzzApp/Pods-FuzzApp.release.xcconfig"; sourceTree = "<group>"; };
+		A8D558FB57E0B77E10932C8B /* Pods-FuzzApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FuzzApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FuzzApp/Pods-FuzzApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D98150431B6AF6A700A79FFE /* FuzzApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FuzzApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98150471B6AF6A700A79FFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D98150481B6AF6A700A79FFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +47,8 @@
 		D981506C1B6AF7CF00A79FFE /* TextTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextTableViewController.swift; sourceTree = "<group>"; };
 		D981506E1B6AF81B00A79FFE /* ImagesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesTableViewController.swift; sourceTree = "<group>"; };
 		D98150721B6AF8F000A79FFE /* FuzzObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FuzzObject.swift; sourceTree = "<group>"; };
+		D9996B091B6BD8C50072B3BA /* FuzzApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FuzzApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		D9FAF02B1B6BD12E00ABAF30 /* AllTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F31D7F27BE431BAC7493746A /* Pods_FuzzApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,12 +70,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A415A50E099B017E7DE5023 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00047EC842DE6A285737FF7E /* Pods_FuzzApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		419FF18A463D97EC7DF756EE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A8D558FB57E0B77E10932C8B /* Pods-FuzzApp.debug.xcconfig */,
+				34330829CBC5A821B7640C6C /* Pods-FuzzApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D981503A1B6AF6A700A79FFE = {
 			isa = PBXGroup;
 			children = (
 				D98150451B6AF6A700A79FFE /* FuzzApp */,
 				D981505B1B6AF6A700A79FFE /* FuzzAppTests */,
 				D98150441B6AF6A700A79FFE /* Products */,
+				419FF18A463D97EC7DF756EE /* Pods */,
+				3A415A50E099B017E7DE5023 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,15 +110,15 @@
 		D98150451B6AF6A700A79FFE /* FuzzApp */ = {
 			isa = PBXGroup;
 			children = (
-				D98150721B6AF8F000A79FFE /* FuzzObject.swift */,
+				D9FAF0291B6BC31100ABAF30 /* Model */,
+				D9FAF02A1B6BC31E00ABAF30 /* ViewControllers */,
+				D9FAF02D1B6BD13400ABAF30 /* View */,
 				D98150481B6AF6A700A79FFE /* AppDelegate.swift */,
 				D98150681B6AF6C200A79FFE /* Main.storyboard */,
-				D981506A1B6AF7B700A79FFE /* AllViewController.swift */,
-				D981506E1B6AF81B00A79FFE /* ImagesTableViewController.swift */,
-				D981506C1B6AF7CF00A79FFE /* TextTableViewController.swift */,
 				D981504F1B6AF6A700A79FFE /* Images.xcassets */,
 				D98150511B6AF6A700A79FFE /* LaunchScreen.xib */,
 				D98150461B6AF6A700A79FFE /* Supporting Files */,
+				D9996B091B6BD8C50072B3BA /* FuzzApp-Bridging-Header.h */,
 			);
 			path = FuzzApp;
 			sourceTree = "<group>";
@@ -121,6 +148,32 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D9FAF0291B6BC31100ABAF30 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D98150721B6AF8F000A79FFE /* FuzzObject.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		D9FAF02A1B6BC31E00ABAF30 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D981506A1B6AF7B700A79FFE /* AllViewController.swift */,
+				D981506E1B6AF81B00A79FFE /* ImagesTableViewController.swift */,
+				D981506C1B6AF7CF00A79FFE /* TextTableViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D9FAF02D1B6BD13400ABAF30 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D9FAF02B1B6BD12E00ABAF30 /* AllTableViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -128,9 +181,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D98150621B6AF6A700A79FFE /* Build configuration list for PBXNativeTarget "FuzzApp" */;
 			buildPhases = (
+				E022018E9BEF596238F5BCC2 /* Check Pods Manifest.lock */,
 				D981503F1B6AF6A700A79FFE /* Sources */,
 				D98150401B6AF6A700A79FFE /* Frameworks */,
 				D98150411B6AF6A700A79FFE /* Resources */,
+				A2515474F0E273899B887E6E /* Copy Pods Resources */,
+				248C4D402D5F9951FB37157E /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -216,12 +272,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		248C4D402D5F9951FB37157E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FuzzApp/Pods-FuzzApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2515474F0E273899B887E6E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FuzzApp/Pods-FuzzApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E022018E9BEF596238F5BCC2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D981503F1B6AF6A700A79FFE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D98150491B6AF6A700A79FFE /* AppDelegate.swift in Sources */,
+				D9FAF02C1B6BD12E00ABAF30 /* AllTableViewCell.swift in Sources */,
 				D981506D1B6AF7CF00A79FFE /* TextTableViewController.swift in Sources */,
 				D98150731B6AF8F000A79FFE /* FuzzObject.swift in Sources */,
 				D981506B1B6AF7B700A79FFE /* AllViewController.swift in Sources */,
@@ -344,21 +449,28 @@
 		};
 		D98150631B6AF6A700A79FFE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8D558FB57E0B77E10932C8B /* Pods-FuzzApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = FuzzApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FuzzApp/FuzzApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		D98150641B6AF6A700A79FFE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34330829CBC5A821B7640C6C /* Pods-FuzzApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = FuzzApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FuzzApp/FuzzApp-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -415,6 +527,7 @@
 				D98150641B6AF6A700A79FFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D98150651B6AF6A700A79FFE /* Build configuration list for PBXNativeTarget "FuzzAppTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +536,7 @@
 				D98150671B6AF6A700A79FFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
