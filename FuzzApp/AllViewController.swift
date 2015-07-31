@@ -37,7 +37,7 @@ class AllViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                     let newFuzz = FuzzObject()
                     newFuzz.id = dictionary["id"] as? String
                     newFuzz.date = dictionary["date"] as? String
-                    newFuzz.type = dictionary["type"] as? String
+                    newFuzz.setType((dictionary["type"] as? String)!)
                     newFuzz.data = dictionary["data"] as? String
                     self.fuzzDataArray.append(newFuzz)
                 }
@@ -67,10 +67,13 @@ class AllViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         cell!.imgView.image = nil
         
         let fuzzObjectForRow = fuzzDataArray[indexPath.row]
-        cell!.idLabel.text = fuzzObjectForRow.id
+        cell!.idLabel.text = "ID: \(fuzzObjectForRow.id!)"
         cell!.dateLabel.text = fuzzObjectForRow.date
-        cell!.typeLabel.text = fuzzObjectForRow.type
-        if (fuzzObjectForRow.type == "image") {
+        cell!.typeLabel.text = "Type: \(fuzzObjectForRow.type!.rawValue)"
+        
+        
+        if (fuzzObjectForRow.type == FuzzType.Image) {
+            cell!.dataLabel.text = nil
             cell!.imgView.setImageWithURL(NSURL(string: fuzzObjectForRow.data!), placeholderImage: UIImage(named: "placeholder"))
         }
         else {

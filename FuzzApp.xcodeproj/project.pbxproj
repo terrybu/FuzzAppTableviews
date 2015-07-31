@@ -114,7 +114,6 @@
 				D9FAF02A1B6BC31E00ABAF30 /* ViewControllers */,
 				D9FAF02D1B6BD13400ABAF30 /* View */,
 				D98150481B6AF6A700A79FFE /* AppDelegate.swift */,
-				D98150681B6AF6C200A79FFE /* Main.storyboard */,
 				D981504F1B6AF6A700A79FFE /* Images.xcassets */,
 				D98150511B6AF6A700A79FFE /* LaunchScreen.xib */,
 				D98150461B6AF6A700A79FFE /* Supporting Files */,
@@ -169,6 +168,7 @@
 		D9FAF02D1B6BD13400ABAF30 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D98150681B6AF6C200A79FFE /* Main.storyboard */,
 				D9FAF02B1B6BD12E00ABAF30 /* AllTableViewCell.swift */,
 			);
 			name = View;
