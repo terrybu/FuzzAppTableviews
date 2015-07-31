@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dMc-Oh-mZu">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--All-->
+        <scene sceneID="xdB-9G-BuD">
+            <objects>
+                <viewController id="wt1-Zt-5SO" customClass="AllViewController" customModule="FuzzApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LGs-4s-o37"/>
+                        <viewControllerLayoutGuide type="bottom" id="2rN-on-7OH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="x9R-O0-uCC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="jAL-qf-hgN">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AllCell" id="utD-yT-hoU">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="utD-yT-hoU" id="tPm-Ux-nKf">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="wt1-Zt-5SO" id="ozb-NR-fCC"/>
+                                    <outlet property="delegate" destination="wt1-Zt-5SO" id="SfI-gb-iWQ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2rN-on-7OH" firstAttribute="top" secondItem="jAL-qf-hgN" secondAttribute="bottom" id="FGz-bx-dUL"/>
+                            <constraint firstItem="jAL-qf-hgN" firstAttribute="leading" secondItem="x9R-O0-uCC" secondAttribute="leading" id="ZHh-Wj-iyA"/>
+                            <constraint firstAttribute="trailing" secondItem="jAL-qf-hgN" secondAttribute="trailing" id="fyb-ob-3ux"/>
+                            <constraint firstItem="jAL-qf-hgN" firstAttribute="top" secondItem="x9R-O0-uCC" secondAttribute="top" id="x8T-7b-tEa"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="All" id="kP6-fQ-qsM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MT5-bf-f1J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="561" y="-532"/>
+        </scene>
+        <!--Text-->
+        <scene sceneID="aph-b1-uaH">
+            <objects>
+                <tableViewController id="NkY-ry-e48" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8D7-Hr-EDu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextCell" id="a5R-vf-4B5">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a5R-vf-4B5" id="N0Q-cS-Xq0">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="NkY-ry-e48" id="rqq-aN-Kxx"/>
+                            <outlet property="delegate" destination="NkY-ry-e48" id="mrO-05-FOG"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Text" id="knp-C3-DyJ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uwd-XD-LXz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="587" y="226"/>
+        </scene>
+        <!--Images-->
+        <scene sceneID="cMF-ik-BQu">
+            <objects>
+                <tableViewController id="y0j-ZB-asF" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9yu-2A-gwX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImagesCell" id="vhD-69-mgi">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vhD-69-mgi" id="uWe-Ro-WWX">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="y0j-ZB-asF" id="OPV-bQ-lTw"/>
+                            <outlet property="delegate" destination="y0j-ZB-asF" id="dMZ-jV-pJ1"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Images" id="dee-KO-Wac"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8PV-uu-8Bm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="587" y="962"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="iSL-zp-dyI">
+            <objects>
+                <tabBarController id="dMc-Oh-mZu" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="hj9-at-56B">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="wt1-Zt-5SO" kind="relationship" relationship="viewControllers" id="X2J-pq-eUd"/>
+                        <segue destination="NkY-ry-e48" kind="relationship" relationship="viewControllers" id="AhR-pg-zgr"/>
+                        <segue destination="y0j-ZB-asF" kind="relationship" relationship="viewControllers" id="Fx3-b1-pCN"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dst-b7-y28" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-199" y="217"/>
+        </scene>
+    </scenes>
+</document>
