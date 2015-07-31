@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="jAL-qf-hgN">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="531"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AllCell" id="utD-yT-hoU">
@@ -36,13 +36,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2rN-on-7OH" firstAttribute="top" secondItem="jAL-qf-hgN" secondAttribute="bottom" id="FGz-bx-dUL"/>
-                            <constraint firstItem="jAL-qf-hgN" firstAttribute="leading" secondItem="x9R-O0-uCC" secondAttribute="leading" id="ZHh-Wj-iyA"/>
-                            <constraint firstAttribute="trailing" secondItem="jAL-qf-hgN" secondAttribute="trailing" id="fyb-ob-3ux"/>
-                            <constraint firstItem="jAL-qf-hgN" firstAttribute="top" secondItem="x9R-O0-uCC" secondAttribute="top" id="x8T-7b-tEa"/>
+                            <constraint firstAttribute="trailing" secondItem="jAL-qf-hgN" secondAttribute="trailing" id="08e-bT-cj5"/>
+                            <constraint firstItem="jAL-qf-hgN" firstAttribute="top" secondItem="LGs-4s-o37" secondAttribute="bottom" id="DWa-F8-5cy"/>
+                            <constraint firstItem="jAL-qf-hgN" firstAttribute="leading" secondItem="x9R-O0-uCC" secondAttribute="leading" id="N4b-bn-pv3"/>
+                            <constraint firstItem="jAL-qf-hgN" firstAttribute="bottom" secondItem="2rN-on-7OH" secondAttribute="top" id="zav-Ri-g7L"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="All" id="kP6-fQ-qsM"/>
+                    <connections>
+                        <outlet property="tableView" destination="jAL-qf-hgN" id="8WV-EX-5d2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MT5-bf-f1J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

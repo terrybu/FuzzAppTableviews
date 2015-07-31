@@ -15,7 +15,8 @@ class FuzzObject {
     var date: String?
     var data: String?
     
-    init(id: String, type: String, date: String, data: String) {
+    convenience init(id: String, type: String, date: String, data: String) {
+        self.init()
         self.id = id
         self.type = type
         self.date = date
