@@ -8,6 +8,36 @@
 
 import UIKit
 
-class TextTableViewController: UITableViewController {
+private let TextCellReuseIdentifier: String = "TextCell"
 
+class TextTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
+
+    var textObjectsArray: [FuzzObject] = []
+    
+    override func viewDidLoad() {
+        textObjectsArray = FuzzDataManager.sharedManager.getOnlyTextObjects()
+    }
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return textObjectsArray.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        var cell : TextTableViewCell? = tableView.dequeueReusableCellWithIdentifier(TextCellReuseIdentifier) as? TextTableViewCell
+        if (cell == nil) {
+            cell = TextTableViewCell(style:.Default, reuseIdentifier:TextCellReuseIdentifier)
+        }
+        
+        let fuzzObjectForRow = textObjectsArray[indexPath.row]
+        cell!.idLabel.text = fuzzObjectForRow.id
+        cell!.dateLabel.text = fuzzObjectForRow.date
+        cell!.dataLabel.text = fuzzObjectForRow.data
+        return cell!
+    }
+    
 }

@@ -14,9 +14,11 @@ private let AllCellReuseIdentifier: String = "AllCell"
 class AllViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
  
     @IBOutlet weak var tableView: UITableView!
-    var fuzzDataArray: [FuzzObject] = []
     
     override func viewDidLoad() {
+        
+        tabBarController?.tabBar.tintColor = UIColor.whiteColor()
+
         let url = NSURL(string: "http://quizzes.fuzzstaging.com/quizzes/mobile/1/data.json")
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
             if (error != nil) {
@@ -39,7 +41,7 @@ class AllViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                     newFuzz.date = dictionary["date"] as? String
                     newFuzz.setType((dictionary["type"] as? String)!)
                     newFuzz.data = dictionary["data"] as? String
-                    self.fuzzDataArray.append(newFuzz)
+                    FuzzDataManager.sharedManager.fuzzDataArray.append(newFuzz)
                 }
             }
             dispatch_async(dispatch_get_main_queue()) {
@@ -56,7 +58,7 @@ class AllViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fuzzDataArray.count
+        return FuzzDataManager.sharedManager.fuzzDataArray.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -66,7 +68,7 @@ class AllViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         }
         cell!.imgView.image = nil
         
-        let fuzzObjectForRow = fuzzDataArray[indexPath.row]
+        let fuzzObjectForRow = FuzzDataManager.sharedManager.fuzzDataArray[indexPath.row]
         cell!.idLabel.text = "ID: \(fuzzObjectForRow.id!)"
         cell!.dateLabel.text = fuzzObjectForRow.date
         cell!.typeLabel.text = "Type: \(fuzzObjectForRow.type!.rawValue)"

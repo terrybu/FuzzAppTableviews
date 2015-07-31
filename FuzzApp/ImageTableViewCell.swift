@@ -1,5 +1,5 @@
 //
-//  AllTableViewCell.swift
+//  ImageTableViewCell.swift
 //  FuzzApp
 //
 //  Created by Terry Bu on 7/31/15.
@@ -8,12 +8,10 @@
 
 import UIKit
 
-class AllTableViewCell: UITableViewCell {
+class ImageTableViewCell: UITableViewCell {
 
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var typeLabel: UILabel!
-    @IBOutlet weak var dataLabel: UILabel!
     @IBOutlet weak var imgView: UIImageView!
-    
+
 }

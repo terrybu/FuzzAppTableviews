@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dMc-Oh-mZu">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--All-->
@@ -13,11 +14,11 @@
                         <viewControllerLayoutGuide type="bottom" id="2rN-on-7OH"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="x9R-O0-uCC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="jAL-qf-hgN">
-                                <rect key="frame" x="0.0" y="20" width="600" height="560"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="531"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AllCell" rowHeight="88" id="utD-yT-hoU" customClass="AllTableViewCell" customModule="FuzzApp" customModuleProvider="target">
@@ -109,10 +110,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="jAL-qf-hgN" secondAttribute="bottom" constant="20" symbolic="YES" id="0Od-R9-vJl"/>
-                            <constraint firstItem="jAL-qf-hgN" firstAttribute="top" secondItem="LGs-4s-o37" secondAttribute="bottom" id="PPb-gq-vZz"/>
-                            <constraint firstItem="jAL-qf-hgN" firstAttribute="leading" secondItem="x9R-O0-uCC" secondAttribute="leading" id="RXH-Cu-OQk"/>
-                            <constraint firstAttribute="trailing" secondItem="jAL-qf-hgN" secondAttribute="trailing" id="jLP-xU-ZCI"/>
+                            <constraint firstItem="jAL-qf-hgN" firstAttribute="leading" secondItem="x9R-O0-uCC" secondAttribute="leading" id="C15-y7-nBi"/>
+                            <constraint firstItem="2rN-on-7OH" firstAttribute="top" secondItem="jAL-qf-hgN" secondAttribute="bottom" id="WsG-wF-Au4"/>
+                            <constraint firstAttribute="trailing" secondItem="jAL-qf-hgN" secondAttribute="trailing" id="lZ0-YK-e6v"/>
+                            <constraint firstItem="jAL-qf-hgN" firstAttribute="top" secondItem="LGs-4s-o37" secondAttribute="bottom" id="p76-Aq-PrP"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="All" image="ic_all" id="kP6-fQ-qsM"/>
@@ -127,17 +128,66 @@
         <!--Text-->
         <scene sceneID="aph-b1-uaH">
             <objects>
-                <tableViewController id="NkY-ry-e48" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8D7-Hr-EDu">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                <tableViewController id="NkY-ry-e48" customClass="TextTableViewController" customModule="FuzzApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="22" sectionFooterHeight="22" id="8D7-Hr-EDu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextCell" id="a5R-vf-4B5">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextCell" id="a5R-vf-4B5" customClass="TextTableViewCell" customModule="FuzzApp" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a5R-vf-4B5" id="N0Q-cS-Xq0">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" text="idLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBX-sp-pxK">
+                                            <rect key="frame" x="8" y="8" width="56" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="dateLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDO-m2-E6E">
+                                            <rect key="frame" x="8" y="58" width="76" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dataLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZoD-Kt-AT0">
+                                            <rect key="frame" x="94" y="0.0" width="506" height="87"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="400" id="En3-1N-YBv"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="En3-1N-YBv"/>
+                                                </mask>
+                                            </variation>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="ZoD-Kt-AT0" secondAttribute="bottom" id="3Dg-YX-ocJ"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="LDO-m2-E6E" secondAttribute="bottom" id="9ap-DI-b9Y"/>
+                                        <constraint firstItem="rBX-sp-pxK" firstAttribute="leading" secondItem="N0Q-cS-Xq0" secondAttribute="leadingMargin" id="GJg-VG-0Bz"/>
+                                        <constraint firstItem="rBX-sp-pxK" firstAttribute="top" secondItem="N0Q-cS-Xq0" secondAttribute="topMargin" id="RnF-vZ-UcD"/>
+                                        <constraint firstItem="ZoD-Kt-AT0" firstAttribute="top" secondItem="N0Q-cS-Xq0" secondAttribute="top" id="ePj-vS-IcO"/>
+                                        <constraint firstItem="ZoD-Kt-AT0" firstAttribute="leading" secondItem="LDO-m2-E6E" secondAttribute="trailing" constant="10" id="l5C-Z9-6sa"/>
+                                        <constraint firstItem="LDO-m2-E6E" firstAttribute="leading" secondItem="N0Q-cS-Xq0" secondAttribute="leadingMargin" id="nhG-rI-wmn"/>
+                                        <constraint firstItem="ZoD-Kt-AT0" firstAttribute="leading" secondItem="rBX-sp-pxK" secondAttribute="trailing" constant="30" id="qcc-dA-IYx"/>
+                                        <constraint firstAttribute="trailing" secondItem="ZoD-Kt-AT0" secondAttribute="trailing" id="rbF-3Y-oHn"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="qcc-dA-IYx"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dataLabel" destination="ZoD-Kt-AT0" id="Rqz-t4-mvX"/>
+                                    <outlet property="dateLabel" destination="LDO-m2-E6E" id="ACt-wv-Gi8"/>
+                                    <outlet property="idLabel" destination="rBX-sp-pxK" id="k1p-z1-b2K"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -154,13 +204,13 @@
         <!--Images-->
         <scene sceneID="cMF-ik-BQu">
             <objects>
-                <tableViewController id="y0j-ZB-asF" sceneMemberID="viewController">
+                <tableViewController id="y0j-ZB-asF" customClass="ImageTableViewController" customModule="FuzzApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9yu-2A-gwX">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImagesCell" id="vhD-69-mgi">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImagesCell" id="vhD-69-mgi" customClass="ImageTableViewCell" customModule="FuzzApp" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vhD-69-mgi" id="uWe-Ro-WWX">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -183,10 +233,11 @@
             <objects>
                 <tabBarController id="dMc-Oh-mZu" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="hj9-at-56B">
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="hj9-at-56B">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="1" green="0.22745098039215686" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="wt1-Zt-5SO" kind="relationship" relationship="viewControllers" id="X2J-pq-eUd"/>

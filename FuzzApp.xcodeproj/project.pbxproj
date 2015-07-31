@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D96C7E531B6C1D5000EFE788 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96C7E521B6C1D5000EFE788 /* ImageTableViewCell.swift */; };
+		D96C7E551B6C1D5A00EFE788 /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96C7E541B6C1D5A00EFE788 /* TextTableViewCell.swift */; };
 		D98150491B6AF6A700A79FFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98150481B6AF6A700A79FFE /* AppDelegate.swift */; };
 		D98150501B6AF6A700A79FFE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D981504F1B6AF6A700A79FFE /* Images.xcassets */; };
 		D98150531B6AF6A700A79FFE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D98150511B6AF6A700A79FFE /* LaunchScreen.xib */; };
@@ -14,9 +16,10 @@
 		D98150691B6AF6C200A79FFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98150681B6AF6C200A79FFE /* Main.storyboard */; };
 		D981506B1B6AF7B700A79FFE /* AllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981506A1B6AF7B700A79FFE /* AllViewController.swift */; };
 		D981506D1B6AF7CF00A79FFE /* TextTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981506C1B6AF7CF00A79FFE /* TextTableViewController.swift */; };
-		D981506F1B6AF81B00A79FFE /* ImagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981506E1B6AF81B00A79FFE /* ImagesTableViewController.swift */; };
+		D981506F1B6AF81B00A79FFE /* ImageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981506E1B6AF81B00A79FFE /* ImageTableViewController.swift */; };
 		D98150731B6AF8F000A79FFE /* FuzzObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98150721B6AF8F000A79FFE /* FuzzObject.swift */; };
 		D9FAF02C1B6BD12E00ABAF30 /* AllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FAF02B1B6BD12E00ABAF30 /* AllTableViewCell.swift */; };
+		D9FB71FF1B6C10A70009FC8C /* FuzzDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FB71FE1B6C10A70009FC8C /* FuzzDataManager.swift */; };
 		F31D7F27BE431BAC7493746A /* Pods_FuzzApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00047EC842DE6A285737FF7E /* Pods_FuzzApp.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -34,6 +37,8 @@
 		00047EC842DE6A285737FF7E /* Pods_FuzzApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FuzzApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34330829CBC5A821B7640C6C /* Pods-FuzzApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FuzzApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FuzzApp/Pods-FuzzApp.release.xcconfig"; sourceTree = "<group>"; };
 		A8D558FB57E0B77E10932C8B /* Pods-FuzzApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FuzzApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FuzzApp/Pods-FuzzApp.debug.xcconfig"; sourceTree = "<group>"; };
+		D96C7E521B6C1D5000EFE788 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
+		D96C7E541B6C1D5A00EFE788 /* TextTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextTableViewCell.swift; sourceTree = "<group>"; };
 		D98150431B6AF6A700A79FFE /* FuzzApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FuzzApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98150471B6AF6A700A79FFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D98150481B6AF6A700A79FFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,10 +50,11 @@
 		D98150681B6AF6C200A79FFE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D981506A1B6AF7B700A79FFE /* AllViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllViewController.swift; sourceTree = "<group>"; };
 		D981506C1B6AF7CF00A79FFE /* TextTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextTableViewController.swift; sourceTree = "<group>"; };
-		D981506E1B6AF81B00A79FFE /* ImagesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesTableViewController.swift; sourceTree = "<group>"; };
+		D981506E1B6AF81B00A79FFE /* ImageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTableViewController.swift; sourceTree = "<group>"; };
 		D98150721B6AF8F000A79FFE /* FuzzObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FuzzObject.swift; sourceTree = "<group>"; };
 		D9996B091B6BD8C50072B3BA /* FuzzApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FuzzApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		D9FAF02B1B6BD12E00ABAF30 /* AllTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTableViewCell.swift; sourceTree = "<group>"; };
+		D9FB71FE1B6C10A70009FC8C /* FuzzDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FuzzDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				D98150721B6AF8F000A79FFE /* FuzzObject.swift */,
+				D9FB71FE1B6C10A70009FC8C /* FuzzDataManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -159,8 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				D981506A1B6AF7B700A79FFE /* AllViewController.swift */,
-				D981506E1B6AF81B00A79FFE /* ImagesTableViewController.swift */,
 				D981506C1B6AF7CF00A79FFE /* TextTableViewController.swift */,
+				D981506E1B6AF81B00A79FFE /* ImageTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -170,6 +177,8 @@
 			children = (
 				D98150681B6AF6C200A79FFE /* Main.storyboard */,
 				D9FAF02B1B6BD12E00ABAF30 /* AllTableViewCell.swift */,
+				D96C7E541B6C1D5A00EFE788 /* TextTableViewCell.swift */,
+				D96C7E521B6C1D5000EFE788 /* ImageTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -325,12 +334,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D96C7E551B6C1D5A00EFE788 /* TextTableViewCell.swift in Sources */,
 				D98150491B6AF6A700A79FFE /* AppDelegate.swift in Sources */,
+				D96C7E531B6C1D5000EFE788 /* ImageTableViewCell.swift in Sources */,
 				D9FAF02C1B6BD12E00ABAF30 /* AllTableViewCell.swift in Sources */,
+				D9FB71FF1B6C10A70009FC8C /* FuzzDataManager.swift in Sources */,
 				D981506D1B6AF7CF00A79FFE /* TextTableViewController.swift in Sources */,
 				D98150731B6AF8F000A79FFE /* FuzzObject.swift in Sources */,
 				D981506B1B6AF7B700A79FFE /* AllViewController.swift in Sources */,
-				D981506F1B6AF81B00A79FFE /* ImagesTableViewController.swift in Sources */,
+				D981506F1B6AF81B00A79FFE /* ImageTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
