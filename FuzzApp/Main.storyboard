@@ -42,7 +42,7 @@
                             <constraint firstItem="jAL-qf-hgN" firstAttribute="bottom" secondItem="2rN-on-7OH" secondAttribute="top" id="zav-Ri-g7L"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="All" id="kP6-fQ-qsM"/>
+                    <tabBarItem key="tabBarItem" title="All" image="ic_all" id="kP6-fQ-qsM"/>
                     <connections>
                         <outlet property="tableView" destination="jAL-qf-hgN" id="8WV-EX-5d2"/>
                     </connections>
@@ -72,7 +72,7 @@
                             <outlet property="delegate" destination="NkY-ry-e48" id="mrO-05-FOG"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Text" id="knp-C3-DyJ"/>
+                    <tabBarItem key="tabBarItem" title="Text" image="ic_text" id="knp-C3-DyJ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uwd-XD-LXz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -99,7 +99,7 @@
                             <outlet property="delegate" destination="y0j-ZB-asF" id="dMZ-jV-pJ1"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Images" id="dee-KO-Wac"/>
+                    <tabBarItem key="tabBarItem" title="Images" image="ic_images" id="dee-KO-Wac"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8PV-uu-8Bm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -126,4 +126,9 @@
             <point key="canvasLocation" x="-199" y="217"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_all" width="24" height="24"/>
+        <image name="ic_images" width="24" height="24"/>
+        <image name="ic_text" width="24" height="24"/>
+    </resources>
 </document>
