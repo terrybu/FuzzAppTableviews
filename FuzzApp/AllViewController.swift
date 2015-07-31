@@ -64,13 +64,14 @@ class AllViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         if (cell == nil) {
             cell = AllTableViewCell(style:.Default, reuseIdentifier:AllCellReuseIdentifier)
         }
-    
+        cell!.imgView.image = nil
+        
         let fuzzObjectForRow = fuzzDataArray[indexPath.row]
         cell!.idLabel.text = fuzzObjectForRow.id
         cell!.dateLabel.text = fuzzObjectForRow.date
         cell!.typeLabel.text = fuzzObjectForRow.type
         if (fuzzObjectForRow.type == "image") {
-            cell!.imgView.setImageWithURL(NSURL(string: fuzzObjectForRow.data!))
+            cell!.imgView.setImageWithURL(NSURL(string: fuzzObjectForRow.data!), placeholderImage: UIImage(named: "placeholder"))
         }
         else {
             cell!.dataLabel.text = fuzzObjectForRow.data
