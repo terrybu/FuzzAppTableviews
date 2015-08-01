@@ -14,7 +14,7 @@
 		D98150531B6AF6A700A79FFE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D98150511B6AF6A700A79FFE /* LaunchScreen.xib */; };
 		D981505F1B6AF6A700A79FFE /* FuzzAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981505E1B6AF6A700A79FFE /* FuzzAppTests.swift */; };
 		D98150691B6AF6C200A79FFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98150681B6AF6C200A79FFE /* Main.storyboard */; };
-		D981506B1B6AF7B700A79FFE /* AllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981506A1B6AF7B700A79FFE /* AllViewController.swift */; };
+		D981506B1B6AF7B700A79FFE /* AllTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981506A1B6AF7B700A79FFE /* AllTableViewController.swift */; };
 		D981506D1B6AF7CF00A79FFE /* TextTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981506C1B6AF7CF00A79FFE /* TextTableViewController.swift */; };
 		D981506F1B6AF81B00A79FFE /* ImageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981506E1B6AF81B00A79FFE /* ImageTableViewController.swift */; };
 		D98150731B6AF8F000A79FFE /* FuzzObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98150721B6AF8F000A79FFE /* FuzzObject.swift */; };
@@ -48,7 +48,7 @@
 		D981505D1B6AF6A700A79FFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D981505E1B6AF6A700A79FFE /* FuzzAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuzzAppTests.swift; sourceTree = "<group>"; };
 		D98150681B6AF6C200A79FFE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		D981506A1B6AF7B700A79FFE /* AllViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllViewController.swift; sourceTree = "<group>"; };
+		D981506A1B6AF7B700A79FFE /* AllTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTableViewController.swift; sourceTree = "<group>"; };
 		D981506C1B6AF7CF00A79FFE /* TextTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextTableViewController.swift; sourceTree = "<group>"; };
 		D981506E1B6AF81B00A79FFE /* ImageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTableViewController.swift; sourceTree = "<group>"; };
 		D98150721B6AF8F000A79FFE /* FuzzObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FuzzObject.swift; sourceTree = "<group>"; };
@@ -165,7 +165,7 @@
 		D9FAF02A1B6BC31E00ABAF30 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D981506A1B6AF7B700A79FFE /* AllViewController.swift */,
+				D981506A1B6AF7B700A79FFE /* AllTableViewController.swift */,
 				D981506C1B6AF7CF00A79FFE /* TextTableViewController.swift */,
 				D981506E1B6AF81B00A79FFE /* ImageTableViewController.swift */,
 			);
@@ -341,7 +341,7 @@
 				D9FB71FF1B6C10A70009FC8C /* FuzzDataManager.swift in Sources */,
 				D981506D1B6AF7CF00A79FFE /* TextTableViewController.swift in Sources */,
 				D98150731B6AF8F000A79FFE /* FuzzObject.swift in Sources */,
-				D981506B1B6AF7B700A79FFE /* AllViewController.swift in Sources */,
+				D981506B1B6AF7B700A79FFE /* AllTableViewController.swift in Sources */,
 				D981506F1B6AF81B00A79FFE /* ImageTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

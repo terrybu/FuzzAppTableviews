@@ -11,7 +11,7 @@ import AFNetworking
 
 private let AllCellReuseIdentifier: String = "AllCell"
 
-class AllViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class AllTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
  
     @IBOutlet weak var tableView: UITableView!
     

@@ -10,6 +10,6 @@ import UIKit
 
 private let ImageCellReuseIdentifier: String = "ImageCell"
 
-class ImageTableViewController: UITableViewController {
+class ImageTableViewController: UIViewController {
 
 }
