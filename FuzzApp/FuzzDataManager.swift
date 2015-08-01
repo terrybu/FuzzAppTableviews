@@ -52,16 +52,21 @@ class FuzzDataManager {
                     self.fuzzDataArray.append(newFuzz)
                 }
             }
+            NSNotificationCenter.defaultCenter().postNotificationName(kFuzzDataDownloadComplete, object: nil)
             completion(result: true)
+            
         }
         task.resume()
     }
 
-    func getOnlyTextObjects() -> [FuzzObject] {
-        var filteredTextObjects = fuzzDataArray.filter({
-            $0.type == FuzzType.Text
-        })
-        return filteredTextObjects
+    func getOnlyTextObjects() -> [FuzzObject]? {
+        if fuzzDataArray.count > 0 {
+            var filteredTextObjects = fuzzDataArray.filter({
+                $0.type == FuzzType.Text
+            })
+            return filteredTextObjects
+        }
+        return nil
     }
     
     

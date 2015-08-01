@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D96C7E531B6C1D5000EFE788 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96C7E521B6C1D5000EFE788 /* ImageTableViewCell.swift */; };
 		D96C7E551B6C1D5A00EFE788 /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96C7E541B6C1D5A00EFE788 /* TextTableViewCell.swift */; };
+		D97BBD5A1B6D42DA00020139 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97BBD591B6D42DA00020139 /* Constants.swift */; };
 		D98150491B6AF6A700A79FFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98150481B6AF6A700A79FFE /* AppDelegate.swift */; };
 		D98150501B6AF6A700A79FFE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D981504F1B6AF6A700A79FFE /* Images.xcassets */; };
 		D98150531B6AF6A700A79FFE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D98150511B6AF6A700A79FFE /* LaunchScreen.xib */; };
@@ -39,6 +40,7 @@
 		A8D558FB57E0B77E10932C8B /* Pods-FuzzApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FuzzApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FuzzApp/Pods-FuzzApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D96C7E521B6C1D5000EFE788 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		D96C7E541B6C1D5A00EFE788 /* TextTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextTableViewCell.swift; sourceTree = "<group>"; };
+		D97BBD591B6D42DA00020139 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D98150431B6AF6A700A79FFE /* FuzzApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FuzzApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98150471B6AF6A700A79FFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D98150481B6AF6A700A79FFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			children = (
 				D98150721B6AF8F000A79FFE /* FuzzObject.swift */,
 				D9FB71FE1B6C10A70009FC8C /* FuzzDataManager.swift */,
+				D97BBD591B6D42DA00020139 /* Constants.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				D96C7E531B6C1D5000EFE788 /* ImageTableViewCell.swift in Sources */,
 				D9FAF02C1B6BD12E00ABAF30 /* AllTableViewCell.swift in Sources */,
 				D9FB71FF1B6C10A70009FC8C /* FuzzDataManager.swift in Sources */,
+				D97BBD5A1B6D42DA00020139 /* Constants.swift in Sources */,
 				D981506D1B6AF7CF00A79FFE /* TextTableViewController.swift in Sources */,
 				D98150731B6AF8F000A79FFE /* FuzzObject.swift in Sources */,
 				D981506B1B6AF7B700A79FFE /* AllTableViewController.swift in Sources */,

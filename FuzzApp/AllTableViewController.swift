@@ -14,6 +14,11 @@ private let AllCellReuseIdentifier: String = "AllCell"
 class AllTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
  
     @IBOutlet weak var tableView: UITableView!
+    private var allFuzzObjectsArray: [FuzzObject]? {
+        get {
+            return FuzzDataManager.sharedManager.fuzzDataArray
+        }
+    }
     
     override func viewDidLoad() {
         
@@ -23,6 +28,7 @@ class AllTableViewController: UIViewController, UITableViewDelegate, UITableView
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     self.tableView.reloadData()
                 })
+                
             }
         }
 
@@ -33,7 +39,10 @@ class AllTableViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return FuzzDataManager.sharedManager.fuzzDataArray.count
+        if let allObjectsArray = allFuzzObjectsArray {
+            return allObjectsArray.count
+        }
+        return 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -43,20 +52,20 @@ class AllTableViewController: UIViewController, UITableViewDelegate, UITableView
         }
         cell!.imgView.image = nil
         
-        let fuzzObjectForRow = FuzzDataManager.sharedManager.fuzzDataArray[indexPath.row]
-        cell!.idLabel.text = "ID: \(fuzzObjectForRow.id!)"
-        cell!.dateLabel.text = fuzzObjectForRow.date
-        cell!.typeLabel.text = "Type: \(fuzzObjectForRow.type!.rawValue)"
-        
-        
-        if (fuzzObjectForRow.type == FuzzType.Image) {
-            cell!.dataLabel.text = nil
-            cell!.imgView.setImageWithURL(NSURL(string: fuzzObjectForRow.data!), placeholderImage: UIImage(named: "placeholder"))
+        if let allObjectsArray = allFuzzObjectsArray {
+            let fuzzObjectForRow = allObjectsArray[indexPath.row]
+            cell!.idLabel.text = "ID: \(fuzzObjectForRow.id!)"
+            cell!.dateLabel.text = fuzzObjectForRow.date
+            cell!.typeLabel.text = "Type: \(fuzzObjectForRow.type!.rawValue)"
+            
+            if (fuzzObjectForRow.type == FuzzType.Image) {
+                cell!.dataLabel.text = nil
+                cell!.imgView.setImageWithURL(NSURL(string: fuzzObjectForRow.data!), placeholderImage: UIImage(named: "placeholder"))
+            }
+            else {
+                cell!.dataLabel.text = fuzzObjectForRow.data
+            }
         }
-        else {
-            cell!.dataLabel.text = fuzzObjectForRow.data
-        }
-        
 
         return cell!
     }
