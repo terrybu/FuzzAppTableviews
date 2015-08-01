@@ -11,5 +11,6 @@ import UIKit
 private let ImageCellReuseIdentifier: String = "ImageCell"
 
 class ImageTableViewController: UIViewController {
+    @IBOutlet weak var tableView: UITableView!
 
 }

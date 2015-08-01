@@ -10,23 +10,25 @@ import UIKit
 
 private let TextCellReuseIdentifier: String = "TextCell"
 
-class TextTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
+class TextTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var tableView: UITableView!
     var textObjectsArray: [FuzzObject] = []
     
     override func viewDidLoad() {
         textObjectsArray = FuzzDataManager.sharedManager.getOnlyTextObjects()
+        tableView.reloadData()
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return textObjectsArray.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell : TextTableViewCell? = tableView.dequeueReusableCellWithIdentifier(TextCellReuseIdentifier) as? TextTableViewCell
         if (cell == nil) {
