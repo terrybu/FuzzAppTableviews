@@ -18,39 +18,14 @@ class AllTableViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         
         tabBarController?.tabBar.tintColor = UIColor.whiteColor()
-
-        let url = NSURL(string: "http://quizzes.fuzzstaging.com/quizzes/mobile/1/data.json")
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
-            if (error != nil) {
-                //error while downloading from url
-                println(error.localizedDescription)
-                return
+        FuzzDataManager.sharedManager.getJSONDataFromEndpoint { (dataParsingComplete) -> Void in
+            if (dataParsingComplete) {
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.tableView.reloadData()
+                })
             }
-            var err: NSError?
-            var jsonResultArray = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as! NSArray
-            if (err != nil) {
-                //error while converting JSON to NSArray
-                println(error.localizedDescription)
-                return
-            }
-//            println(jsonResultArray.description)
-            for dictObject in jsonResultArray {
-                if let dictionary = dictObject as? NSDictionary {
-                    let newFuzz = FuzzObject()
-                    newFuzz.id = dictionary["id"] as? String
-                    newFuzz.date = dictionary["date"] as? String
-                    newFuzz.setType((dictionary["type"] as? String)!)
-                    newFuzz.data = dictionary["data"] as? String
-                    FuzzDataManager.sharedManager.fuzzDataArray.append(newFuzz)
-                }
-            }
-            dispatch_async(dispatch_get_main_queue()) {
-                self.tableView.reloadData()
-            }
-            
         }
-        
-        task.resume()
+
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

@@ -25,6 +25,37 @@ class FuzzDataManager {
         
         return Static.instance!
     }
+    
+    func getJSONDataFromEndpoint(completion: (result: Bool) -> Void) {
+        let url = NSURL(string: "http://quizzes.fuzzstaging.com/quizzes/mobile/1/data.json")
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
+            if (error != nil) {
+                //error while downloading from url
+                println(error.localizedDescription)
+                return
+            }
+            var err: NSError?
+            var jsonResultArray = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as! NSArray
+            if (err != nil) {
+                //error while converting JSON to NSArray
+                println(error.localizedDescription)
+                return
+            }
+            //            println(jsonResultArray.description)
+            for dictObject in jsonResultArray {
+                if let dictionary = dictObject as? NSDictionary {
+                    let newFuzz = FuzzObject()
+                    newFuzz.id = dictionary["id"] as? String
+                    newFuzz.date = dictionary["date"] as? String
+                    newFuzz.setType((dictionary["type"] as? String)!)
+                    newFuzz.data = dictionary["data"] as? String
+                    self.fuzzDataArray.append(newFuzz)
+                }
+            }
+            completion(result: true)
+        }
+        task.resume()
+    }
 
     func getOnlyTextObjects() -> [FuzzObject] {
         var filteredTextObjects = fuzzDataArray.filter({
