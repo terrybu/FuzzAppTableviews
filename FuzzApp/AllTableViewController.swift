@@ -8,7 +8,7 @@
 
 import UIKit
 import AFNetworking
-
+import WebKit
 
 class AllTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
  
@@ -78,8 +78,23 @@ class AllTableViewController: UIViewController, UITableViewDelegate, UITableView
                     break
             }
         }
-       
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = self.tableView.cellForRowAtIndexPath(indexPath)
+        if let allObjectsArray = allFuzzObjectsArray {
+            let fuzzObjectForRow = allObjectsArray[indexPath.row]
+            if fuzzObjectForRow.type == FuzzType.Text {
+                let webViewController = UIViewController()
+                let wkWebView = WKWebView(frame: self.view.frame)
+                let url = NSURL(string: "https://fuzzproductions.com/")
+                let request = NSURLRequest(URL: url!)
+                wkWebView.loadRequest(request)
+                webViewController.view = wkWebView
+                self.navigationController?.pushViewController(webViewController, animated: true)
+            }
+        }
     }
     
 }

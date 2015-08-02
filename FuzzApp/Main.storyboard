@@ -27,15 +27,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="utD-yT-hoU" id="tPm-Ux-nKf">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="ID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4b-hD-0WX" userLabel="idLabel">
-                                                    <rect key="frame" x="4" y="4" width="100" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="Sfb-Y3-Cw0"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwb-iw-alt" userLabel="typeLabel">
                                                     <rect key="frame" x="4" y="62" width="36" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -49,7 +40,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Data" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mps-Wd-P57" userLabel="dataLabel">
-                                                    <rect key="frame" x="124" y="0.0" width="200" height="87"/>
+                                                    <rect key="frame" x="324" y="0.0" width="200" height="87"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="200" id="1Ab-Bx-3SD"/>
                                                     </constraints>
@@ -69,6 +60,15 @@
                                                         </mask>
                                                     </variation>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="ID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4b-hD-0WX" userLabel="idLabel">
+                                                    <rect key="frame" x="4" y="4" width="300" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="300" id="Sfb-Y3-Cw0"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="QI8-bE-tFC" firstAttribute="top" secondItem="tPm-Ux-nKf" secondAttribute="top" id="4qY-OO-efC"/>
@@ -191,6 +191,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="jAL-qf-hgN" firstAttribute="leading" secondItem="x9R-O0-uCC" secondAttribute="leading" id="C15-y7-nBi"/>
                             <constraint firstItem="2rN-on-7OH" firstAttribute="top" secondItem="jAL-qf-hgN" secondAttribute="bottom" id="WsG-wF-Au4"/>
@@ -409,6 +410,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="BMB-jX-6gD" firstAttribute="leading" secondItem="XLh-di-7Am" secondAttribute="leading" id="BYZ-wZ-sdK"/>
                             <constraint firstAttribute="trailing" secondItem="BMB-jX-6gD" secondAttribute="trailing" id="JHL-eL-uwC"/>
@@ -434,6 +436,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TGh-US-Og8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="1" green="0.2274509804" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -481,6 +484,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pAB-wp-fXO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="1" green="0.2274509804" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
