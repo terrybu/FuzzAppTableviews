@@ -15,6 +15,7 @@ class ImageTableViewController: UIViewController, UITableViewDataSource, UITable
 
     
     override func viewDidLoad() {
+        loadTableViewWithFilteredData()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadTableViewWithFilteredData", name: kFuzzDataDownloadComplete, object: nil)
     }
     
@@ -39,18 +40,25 @@ class ImageTableViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell : TextTableViewCell? = tableView.dequeueReusableCellWithIdentifier(TextCell2ReuseIdentifier) as? TextTableViewCell
+        var cell : ImageTableViewCell! = tableView.dequeueReusableCellWithIdentifier(ImageCellReuseIdentifier) as? ImageTableViewCell
         if (cell == nil) {
-            cell = TextTableViewCell(style:.Default, reuseIdentifier:TextCell2ReuseIdentifier)
-        }
-        if let imageObjectsArray = imageOnlyObjectsArray {
-            let fuzzObjectForRow = imageObjectsArray[indexPath.row]
-            cell!.idLabel.text = "ID: \(fuzzObjectForRow.id!)"
-            cell!.dateLabel.text = fuzzObjectForRow.date
-            cell!.dataLabel.text = fuzzObjectForRow.data
+            cell = ImageTableViewCell(style:.Default, reuseIdentifier:ImageCellReuseIdentifier)
         }
         
-        return cell!
+        cell.imgView.image = nil
+        
+        if let imageObjectsArray = imageOnlyObjectsArray {
+            let fuzzObjectForRow = imageObjectsArray[indexPath.row]
+            cell.idLabel.text = "ID: \(fuzzObjectForRow.id!)"
+            cell.dateLabel.text = fuzzObjectForRow.date
+            cell.imgView.setImageWithURL(NSURL(string: fuzzObjectForRow.data!), placeholderImage: UIImage(named: "placeholder"));
+        }
+        
+        return cell
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
 }

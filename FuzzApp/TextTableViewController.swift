@@ -40,18 +40,22 @@ class TextTableViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell : TextTableViewCell? = tableView.dequeueReusableCellWithIdentifier(TextCell2ReuseIdentifier) as? TextTableViewCell
+        var cell : TextTableViewCell! = tableView.dequeueReusableCellWithIdentifier(TextCell2ReuseIdentifier) as? TextTableViewCell
         if (cell == nil) {
             cell = TextTableViewCell(style:.Default, reuseIdentifier:TextCell2ReuseIdentifier)
         }
         if let textObjectsArray = textOnlyObjectsArray {
             let fuzzObjectForRow = textObjectsArray[indexPath.row]
-            cell!.idLabel.text = "ID: \(fuzzObjectForRow.id!)"
-            cell!.dateLabel.text = fuzzObjectForRow.date
-            cell!.dataLabel.text = fuzzObjectForRow.data
+            cell.idLabel.text = "ID: \(fuzzObjectForRow.id!)"
+            cell.dateLabel.text = fuzzObjectForRow.date
+            cell.dataLabel.text = fuzzObjectForRow.data
         }
 
-        return cell!
+        return cell
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
 }

@@ -20,7 +20,6 @@ class AllTableViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     override func viewDidLoad() {
-        
         tabBarController?.tabBar.tintColor = UIColor.whiteColor()
         FuzzDataManager.sharedManager.getJSONDataFromEndpoint { (dataParsingComplete) -> Void in
             if (dataParsingComplete) {
