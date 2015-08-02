@@ -69,5 +69,15 @@ class FuzzDataManager {
         return nil
     }
     
+    func getOnlyImageObjects() -> [FuzzObject]? {
+        if fuzzDataArray.count > 0 {
+            var filteredImageObjects = fuzzDataArray.filter({
+                $0.type == FuzzType.Image
+            })
+            return filteredImageObjects
+        }
+        return nil
+    }
+    
     
 }

@@ -8,7 +8,6 @@
 
 import UIKit
 
-private let TextCellReuseIdentifier: String = "TextCell"
 
 class TextTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -22,9 +21,8 @@ class TextTableViewController: UIViewController, UITableViewDataSource, UITableV
     
     @objc
     private func loadTableViewWithFilteredData() {
-        println("loading text tableview")
         textOnlyObjectsArray = FuzzDataManager.sharedManager.getOnlyTextObjects()
-        if let textObjectsArray = textOnlyObjectsArray {
+        if textOnlyObjectsArray != nil {
             tableView.reloadData()
         }
     }
@@ -42,13 +40,13 @@ class TextTableViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell : TextTableViewCell? = tableView.dequeueReusableCellWithIdentifier(TextCellReuseIdentifier) as? TextTableViewCell
+        var cell : TextTableViewCell? = tableView.dequeueReusableCellWithIdentifier(TextCell2ReuseIdentifier) as? TextTableViewCell
         if (cell == nil) {
-            cell = TextTableViewCell(style:.Default, reuseIdentifier:TextCellReuseIdentifier)
+            cell = TextTableViewCell(style:.Default, reuseIdentifier:TextCell2ReuseIdentifier)
         }
         if let textObjectsArray = textOnlyObjectsArray {
             let fuzzObjectForRow = textObjectsArray[indexPath.row]
-            cell!.idLabel.text = fuzzObjectForRow.id
+            cell!.idLabel.text = "ID: \(fuzzObjectForRow.id!)"
             cell!.dateLabel.text = fuzzObjectForRow.date
             cell!.dataLabel.text = fuzzObjectForRow.data
         }

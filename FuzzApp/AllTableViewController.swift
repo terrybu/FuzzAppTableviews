@@ -9,7 +9,6 @@
 import UIKit
 import AFNetworking
 
-private let AllCellReuseIdentifier: String = "AllCell"
 
 class AllTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
  
@@ -46,28 +45,42 @@ class AllTableViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell : AllTableViewCell? = tableView.dequeueReusableCellWithIdentifier(AllCellReuseIdentifier) as? AllTableViewCell
-        if (cell == nil) {
-            cell = AllTableViewCell(style:.Default, reuseIdentifier:AllCellReuseIdentifier)
-        }
-        cell!.imgView.image = nil
         
+        var cell: UITableViewCell!
+
         if let allObjectsArray = allFuzzObjectsArray {
             let fuzzObjectForRow = allObjectsArray[indexPath.row]
-            cell!.idLabel.text = "ID: \(fuzzObjectForRow.id!)"
-            cell!.dateLabel.text = fuzzObjectForRow.date
-            cell!.typeLabel.text = "Type: \(fuzzObjectForRow.type!.rawValue)"
             
-            if (fuzzObjectForRow.type == FuzzType.Image) {
-                cell!.dataLabel.text = nil
-                cell!.imgView.setImageWithURL(NSURL(string: fuzzObjectForRow.data!), placeholderImage: UIImage(named: "placeholder"))
-            }
-            else {
-                cell!.dataLabel.text = fuzzObjectForRow.data
+            switch fuzzObjectForRow.type! {
+                case FuzzType.Text:
+                    cell = tableView.dequeueReusableCellWithIdentifier(TextCellReuseIdentifier) as! TextTableViewCell
+                    if (cell == nil) {
+                        cell = TextTableViewCell(style:.Default, reuseIdentifier:TextCellReuseIdentifier)
+                    }
+                    (cell as! TextTableViewCell).idLabel.text = "ID: \(fuzzObjectForRow.id!)"
+                    (cell as! TextTableViewCell).dateLabel.text = fuzzObjectForRow.date
+                    (cell as! TextTableViewCell).dataLabel.text = fuzzObjectForRow.data
+                    break
+                case FuzzType.Image:
+                    cell = tableView.dequeueReusableCellWithIdentifier(AllCellReuseIdentifier) as! AllTableViewCell
+                    (cell as! AllTableViewCell).imgView.image = nil
+                    (cell as! AllTableViewCell).idLabel.text = "ID: \(fuzzObjectForRow.id!)"
+                    (cell as! AllTableViewCell).dateLabel.text = fuzzObjectForRow.date
+                    (cell as! AllTableViewCell).dataLabel.text = nil
+                    (cell as! AllTableViewCell).imgView.setImageWithURL(NSURL(string: fuzzObjectForRow.data!), placeholderImage: UIImage(named: "placeholder"));
+                    (cell as! AllTableViewCell).typeLabel.text = "Type: \(fuzzObjectForRow.type!.rawValue)"
+                    break
+                default:
+                    cell = tableView.dequeueReusableCellWithIdentifier(AllCellReuseIdentifier) as! AllTableViewCell
+                    (cell as! AllTableViewCell).idLabel.text = "ID: \(fuzzObjectForRow.id!)"
+                    (cell as! AllTableViewCell).dateLabel.text = fuzzObjectForRow.date
+                    (cell as! AllTableViewCell).dataLabel.text = nil
+                    (cell as! AllTableViewCell).typeLabel.text = "Type: \(fuzzObjectForRow.type!.rawValue)"
+                    break
             }
         }
-
-        return cell!
+       
+        return cell
     }
     
 }
