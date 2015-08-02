@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import JTSImageViewController
 
 class ImageTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
@@ -55,6 +55,16 @@ class ImageTableViewController: UIViewController, UITableViewDataSource, UITable
         }
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = self.tableView.cellForRowAtIndexPath(indexPath) as! ImageTableViewCell
+        var imageInfo = JTSImageInfo()
+        imageInfo.image = cell.imgView.image
+        imageInfo.referenceRect = cell.imgView.frame
+        imageInfo.referenceView = cell.superview
+        var imageViewer = JTSImageViewController(imageInfo: imageInfo, mode: JTSImageViewControllerMode.Image, backgroundStyle: JTSImageViewControllerBackgroundOptions.Scaled)
+        imageViewer.showFromViewController(self, transition: JTSImageViewControllerTransition._FromOriginalPosition)
     }
     
     deinit {

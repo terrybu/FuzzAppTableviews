@@ -4,6 +4,7 @@ use_frameworks!
 
 target 'FuzzApp' do
 	pod 'AFNetworking'
+	pod 'JTSImageViewController'
 end
 
 target 'FuzzAppTests' do

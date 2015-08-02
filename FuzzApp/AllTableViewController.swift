@@ -9,6 +9,7 @@
 import UIKit
 import AFNetworking
 import WebKit
+import JTSImageViewController
 
 class AllTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
  
@@ -74,6 +75,7 @@ class AllTableViewController: UIViewController, UITableViewDelegate, UITableView
                     (cell as! AllTableViewCell).idLabel.text = "ID: \(fuzzObjectForRow.id!)"
                     (cell as! AllTableViewCell).dateLabel.text = fuzzObjectForRow.date
                     (cell as! AllTableViewCell).dataLabel.text = nil
+                    (cell as! AllTableViewCell).imgView.image = nil
                     (cell as! AllTableViewCell).typeLabel.text = "Type: \(fuzzObjectForRow.type!.rawValue)"
                     break
             }
@@ -93,6 +95,14 @@ class AllTableViewController: UIViewController, UITableViewDelegate, UITableView
                 wkWebView.loadRequest(request)
                 webViewController.view = wkWebView
                 self.navigationController?.pushViewController(webViewController, animated: true)
+            }
+            else if fuzzObjectForRow.type == FuzzType.Image {
+                var imageInfo = JTSImageInfo()
+                imageInfo.image = (cell as! AllTableViewCell).imgView.image
+                imageInfo.referenceRect = (cell as! AllTableViewCell).imgView.frame
+                imageInfo.referenceView = (cell as! AllTableViewCell).superview
+                var imageViewer = JTSImageViewController(imageInfo: imageInfo, mode: JTSImageViewControllerMode.Image, backgroundStyle: JTSImageViewControllerBackgroundOptions.Scaled)
+                imageViewer.showFromViewController(self, transition: JTSImageViewControllerTransition._FromOriginalPosition)
             }
         }
     }
