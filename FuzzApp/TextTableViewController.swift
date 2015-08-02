@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class TextTableViewController: UIViewController {
+class TextTableViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     private var textOnlyObjectsArray: [FuzzObject]?
@@ -30,6 +30,11 @@ class TextTableViewController: UIViewController {
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
+    
+    //MARK: UITextViewDelegate 
+//    func textViewDidBeginEditing(textView: UITextView) {
+//        self.tableView.selectRowAtIndexPath(NSIndexPath(index:textView.tag), animated: true, scrollPosition: UITableViewScrollPosition.None)
+//    }
 }
 
 extension TextTableViewController: UITableViewDataSource {
@@ -56,7 +61,7 @@ extension TextTableViewController: UITableViewDataSource {
             cell.idLabel.text = "ID: \(fuzzObjectForRow.id!)"
             cell.dateLabel.text = fuzzObjectForRow.date
             cell.dataTextView.text = fuzzObjectForRow.data
-            
+            cell.dataTextView.tag = indexPath.row
         }
         return cell
     }
@@ -67,12 +72,11 @@ extension TextTableViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if let textObjectsArray = textOnlyObjectsArray {
             let fuzzObjectForRow = textObjectsArray[indexPath.row]
-            let label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 10000))
-            label.text = fuzzObjectForRow.data
-            label.numberOfLines = 10
-            label.font = UIFont(name: "Times New Roman", size: 19.0)
-            label.sizeToFit()
-            let calculatedHeight = label.frame.height + 10
+            let textView = UITextView(frame: CGRect(x: 0, y: 0, width: 300, height: 1000))
+            textView.text = fuzzObjectForRow.data
+            textView.font = UIFont(name: "Times New Roman", size: 14.0)
+            textView.sizeToFit()
+            let calculatedHeight = textView.frame.height
             if (calculatedHeight) > 66 {
                 return calculatedHeight
             }
