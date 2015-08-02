@@ -101,7 +101,7 @@
                                             <outlet property="typeLabel" destination="gwb-iw-alt" id="nWJ-OC-t0Q"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextCell" id="B1P-JU-mpY" customClass="TextTableViewCell" customModule="FuzzApp" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AllTextCell" id="B1P-JU-mpY" customClass="AllTextTableViewCell" customModule="FuzzApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="232" width="600" height="88"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B1P-JU-mpY" id="cXx-Km-wux">
@@ -177,9 +177,10 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="dataLabel" destination="Ygq-rE-5O6" id="Czb-7A-hpr"/>
-                                            <outlet property="dateLabel" destination="jS7-mi-Q9s" id="p0V-ir-p0f"/>
-                                            <outlet property="idLabel" destination="OK0-k5-wZR" id="h2E-0t-P31"/>
+                                            <outlet property="dataLabel" destination="Ygq-rE-5O6" id="fec-Z1-EO9"/>
+                                            <outlet property="dateLabel" destination="jS7-mi-Q9s" id="M6R-tu-1eY"/>
+                                            <outlet property="idLabel" destination="OK0-k5-wZR" id="Yz1-ZI-bdv"/>
+                                            <outlet property="typeLabel" destination="QdK-GD-Wlz" id="lNc-8I-vLT"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -204,7 +205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MT5-bf-f1J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1373" y="-532"/>
+            <point key="canvasLocation" x="245" y="-1084"/>
         </scene>
         <!--TextTableViewController-->
         <scene sceneID="znV-X2-Ert">
@@ -222,7 +223,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextCell2" id="a5R-vf-4B5" customClass="TextTableViewCell" customModule="FuzzApp" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextCell" id="a5R-vf-4B5" customClass="TextTableViewCell" customModule="FuzzApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="232" width="600" height="88"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a5R-vf-4B5" id="N0Q-cS-Xq0">
@@ -243,12 +244,15 @@
                                                     <color key="textColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DZD-cS-30z">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZD-cS-30z">
                                                     <rect key="frame" x="124" y="0.0" width="476" height="87"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="V7m-xY-ZEA" id="4FY-S3-yD4"/>
+                                                    </connections>
                                                 </textView>
                                             </subviews>
                                             <constraints>
@@ -300,7 +304,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ou4-qv-tWy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1373" y="217"/>
+            <point key="canvasLocation" x="245" y="-335"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="iSL-zp-dyI">
@@ -321,7 +325,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dst-b7-y28" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-199" y="217"/>
+            <point key="canvasLocation" x="-1327" y="-335"/>
         </scene>
         <!--ImageTableViewController-->
         <scene sceneID="rgQ-eW-is0">
@@ -419,7 +423,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="27I-a0-n3w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1373" y="898"/>
+            <point key="canvasLocation" x="245" y="346"/>
         </scene>
         <!--All-->
         <scene sceneID="BPp-HP-avF">
@@ -442,7 +446,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QcT-r2-6kq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="561" y="-532"/>
+            <point key="canvasLocation" x="-567" y="-1084"/>
         </scene>
         <!--Text-->
         <scene sceneID="YWN-A3-Cxi">
@@ -453,6 +457,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bjx-CI-RNX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="1" green="0.2274509804" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -465,7 +470,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jOM-84-H6S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="561" y="217"/>
+            <point key="canvasLocation" x="-567" y="-335"/>
         </scene>
         <!--Images-->
         <scene sceneID="cwW-5D-Nov">
@@ -488,7 +493,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rND-Cp-teA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="561" y="898"/>
+            <point key="canvasLocation" x="-567" y="346"/>
         </scene>
     </scenes>
     <resources>

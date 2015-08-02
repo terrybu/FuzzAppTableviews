@@ -52,13 +52,13 @@ class AllTableViewController: UIViewController, UITableViewDelegate, UITableView
             
             switch fuzzObjectForRow.type! {
                 case FuzzType.Text:
-                    cell = tableView.dequeueReusableCellWithIdentifier(TextCellReuseIdentifier) as! TextTableViewCell
+                    cell = tableView.dequeueReusableCellWithIdentifier(AllTextCellReuseIdentifier) as! AllTextTableViewCell
                     if (cell == nil) {
-                        cell = TextTableViewCell(style:.Default, reuseIdentifier:TextCellReuseIdentifier)
+                        cell = AllTextTableViewCell(style:.Default, reuseIdentifier:AllTextCellReuseIdentifier)
                     }
-                    (cell as! TextTableViewCell).idLabel.text = "ID: \(fuzzObjectForRow.id!)"
-                    (cell as! TextTableViewCell).dateLabel.text = fuzzObjectForRow.date
-                    (cell as! TextTableViewCell).dataLabel.text = fuzzObjectForRow.data
+                    (cell as! AllTextTableViewCell).idLabel.text = "ID: \(fuzzObjectForRow.id!)"
+                    (cell as! AllTextTableViewCell).dateLabel.text = fuzzObjectForRow.date
+                    (cell as! AllTextTableViewCell).dataLabel.text = fuzzObjectForRow.data
                     break
                 case FuzzType.Image:
                     cell = tableView.dequeueReusableCellWithIdentifier(AllCellReuseIdentifier) as! AllTableViewCell

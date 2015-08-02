@@ -12,6 +12,6 @@ let kFuzzDataDownloadComplete = "kFuzzDataDownloadComplete"
 
 //Reuse Identifiers
 let AllCellReuseIdentifier: String = "AllCell"
-let TextCellReuseIdentifier: String = "TextCell"
+let AllTextCellReuseIdentifier: String = "AllTextCell"
 let ImageCellReuseIdentifier: String = "ImageCell"
-let TextCell2ReuseIdentifier: String = "TextCell2"
+let TextCellReuseIdentifier: String = "TextCell"

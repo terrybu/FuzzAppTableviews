@@ -7,9 +7,9 @@
 //
 
 import UIKit
+import WebKit
 
-
-class TextTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TextTableViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     private var textOnlyObjectsArray: [FuzzObject]?
@@ -27,6 +27,13 @@ class TextTableViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
     
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+}
+
+extension TextTableViewController: UITableViewDataSource {
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -40,20 +47,22 @@ class TextTableViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell : TextTableViewCell! = tableView.dequeueReusableCellWithIdentifier(TextCell2ReuseIdentifier) as? TextTableViewCell
+        var cell : TextTableViewCell! = tableView.dequeueReusableCellWithIdentifier(TextCellReuseIdentifier) as? TextTableViewCell
         if (cell == nil) {
-            cell = TextTableViewCell(style:.Default, reuseIdentifier:TextCell2ReuseIdentifier)
+            cell = TextTableViewCell(style:.Default, reuseIdentifier:TextCellReuseIdentifier)
         }
         if let textObjectsArray = textOnlyObjectsArray {
             let fuzzObjectForRow = textObjectsArray[indexPath.row]
             cell.idLabel.text = "ID: \(fuzzObjectForRow.id!)"
             cell.dateLabel.text = fuzzObjectForRow.date
-//            cell.dataLabel.text = fuzzObjectForRow.data
             cell.dataTextView.text = fuzzObjectForRow.data
-
+            
         }
         return cell
     }
+}
+
+extension TextTableViewController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if let textObjectsArray = textOnlyObjectsArray {
@@ -71,8 +80,14 @@ class TextTableViewController: UIViewController, UITableViewDataSource, UITableV
         return 66
     }
     
-    deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let webViewController = UIViewController()
+        let wkWebView = WKWebView(frame: self.view.frame)
+        let url = NSURL(string: "https://fuzzproductions.com/")
+        let request = NSURLRequest(URL: url!)
+        wkWebView.loadRequest(request)
+        webViewController.view = wkWebView
+        self.navigationController?.pushViewController(webViewController, animated: true)
     }
-    
+
 }
