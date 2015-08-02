@@ -41,7 +41,6 @@ class FuzzDataManager {
                 println(error.localizedDescription)
                 return
             }
-            //            println(jsonResultArray.description)
             for dictObject in jsonResultArray {
                 if let dictionary = dictObject as? NSDictionary {
                     let newFuzz = FuzzObject()

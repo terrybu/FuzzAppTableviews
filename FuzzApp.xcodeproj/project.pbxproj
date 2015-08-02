@@ -122,8 +122,8 @@
 			children = (
 				D98150481B6AF6A700A79FFE /* AppDelegate.swift */,
 				D9FAF0291B6BC31100ABAF30 /* Model */,
-				D9FAF02A1B6BC31E00ABAF30 /* ViewControllers */,
 				D9FAF02D1B6BD13400ABAF30 /* View */,
+				D9FAF02A1B6BC31E00ABAF30 /* ViewControllers */,
 				D981504F1B6AF6A700A79FFE /* Images.xcassets */,
 				D98150511B6AF6A700A79FFE /* LaunchScreen.xib */,
 				D98150461B6AF6A700A79FFE /* Supporting Files */,

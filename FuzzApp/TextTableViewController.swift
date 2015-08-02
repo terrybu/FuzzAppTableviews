@@ -30,11 +30,7 @@ class TextTableViewController: UIViewController, UITextViewDelegate {
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
-    
-    //MARK: UITextViewDelegate 
-//    func textViewDidBeginEditing(textView: UITextView) {
-//        self.tableView.selectRowAtIndexPath(NSIndexPath(index:textView.tag), animated: true, scrollPosition: UITableViewScrollPosition.None)
-//    }
+
 }
 
 extension TextTableViewController: UITableViewDataSource {

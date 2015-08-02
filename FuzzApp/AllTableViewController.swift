@@ -60,6 +60,8 @@ class AllTableViewController: UIViewController, UITableViewDelegate, UITableView
                     (cell as! AllTextTableViewCell).idLabel.text = "ID: \(fuzzObjectForRow.id!)"
                     (cell as! AllTextTableViewCell).dateLabel.text = fuzzObjectForRow.date
                     (cell as! AllTextTableViewCell).dataLabel.text = fuzzObjectForRow.data
+                    (cell as! AllTextTableViewCell).dataLabel.sizeToFit()
+
                     break
                 case FuzzType.Image:
                     cell = tableView.dequeueReusableCellWithIdentifier(AllCellReuseIdentifier) as! AllTableViewCell
@@ -81,6 +83,24 @@ class AllTableViewController: UIViewController, UITableViewDelegate, UITableView
             }
         }
         return cell
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if let objectsArray = allFuzzObjectsArray {
+            let fuzzObjectForRow = objectsArray[indexPath.row]
+            if fuzzObjectForRow.type == FuzzType.Text {
+                let label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 1000))
+                label.text = fuzzObjectForRow.data
+                label.font = UIFont(name: "Times New Roman", size: 14.0)
+                label.numberOfLines = 0
+                label.sizeToFit()
+                let calculatedHeight = label.frame.height
+                if (calculatedHeight) > 88 {
+                    return calculatedHeight
+                }
+            }
+        }
+        return 88
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
