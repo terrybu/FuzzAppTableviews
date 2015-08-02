@@ -48,10 +48,27 @@ class TextTableViewController: UIViewController, UITableViewDataSource, UITableV
             let fuzzObjectForRow = textObjectsArray[indexPath.row]
             cell.idLabel.text = "ID: \(fuzzObjectForRow.id!)"
             cell.dateLabel.text = fuzzObjectForRow.date
-            cell.dataLabel.text = fuzzObjectForRow.data
-        }
+//            cell.dataLabel.text = fuzzObjectForRow.data
+            cell.dataTextView.text = fuzzObjectForRow.data
 
+        }
         return cell
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if let textObjectsArray = textOnlyObjectsArray {
+            let fuzzObjectForRow = textObjectsArray[indexPath.row]
+            let label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 10000))
+            label.text = fuzzObjectForRow.data
+            label.numberOfLines = 10
+            label.font = UIFont(name: "Times New Roman", size: 19.0)
+            label.sizeToFit()
+            let calculatedHeight = label.frame.height + 10
+            if (calculatedHeight) > 66 {
+                return calculatedHeight
+            }
+        }
+        return 66
     }
     
     deinit {

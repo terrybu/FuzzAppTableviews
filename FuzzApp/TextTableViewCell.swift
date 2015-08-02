@@ -13,5 +13,6 @@ class TextTableViewCell: UITableViewCell {
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var dataLabel: UILabel!
-
+    
+    @IBOutlet weak var dataTextView: UITextView!
 }

@@ -243,48 +243,37 @@
                                                     <color key="textColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="dataLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZoD-Kt-AT0">
-                                                    <rect key="frame" x="128" y="0.0" width="472" height="87"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="400" id="En3-1N-YBv"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="En3-1N-YBv"/>
-                                                        </mask>
-                                                    </variation>
-                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DZD-cS-30z">
+                                                    <rect key="frame" x="124" y="0.0" width="476" height="87"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="rBX-sp-pxK" firstAttribute="leading" secondItem="N0Q-cS-Xq0" secondAttribute="leading" constant="4" id="26q-sS-iL2"/>
-                                                <constraint firstAttribute="bottom" secondItem="ZoD-Kt-AT0" secondAttribute="bottom" id="3Dg-YX-ocJ"/>
+                                                <constraint firstItem="DZD-cS-30z" firstAttribute="top" secondItem="N0Q-cS-Xq0" secondAttribute="top" id="3CK-Zm-XvE"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="LDO-m2-E6E" secondAttribute="bottom" id="9ap-DI-b9Y"/>
                                                 <constraint firstItem="rBX-sp-pxK" firstAttribute="leading" secondItem="N0Q-cS-Xq0" secondAttribute="leadingMargin" id="GJg-VG-0Bz"/>
-                                                <constraint firstItem="ZoD-Kt-AT0" firstAttribute="leading" secondItem="rBX-sp-pxK" secondAttribute="trailing" constant="20" id="LWC-0M-Pqp"/>
                                                 <constraint firstItem="rBX-sp-pxK" firstAttribute="top" secondItem="N0Q-cS-Xq0" secondAttribute="topMargin" id="RnF-vZ-UcD"/>
+                                                <constraint firstAttribute="trailing" secondItem="DZD-cS-30z" secondAttribute="trailing" id="SvU-IE-grA"/>
                                                 <constraint firstItem="rBX-sp-pxK" firstAttribute="top" secondItem="N0Q-cS-Xq0" secondAttribute="top" constant="4" id="XLs-Qx-aAi"/>
+                                                <constraint firstAttribute="bottom" secondItem="DZD-cS-30z" secondAttribute="bottom" id="b1P-6o-G4e"/>
                                                 <constraint firstItem="LDO-m2-E6E" firstAttribute="leading" secondItem="N0Q-cS-Xq0" secondAttribute="leading" constant="4" id="djy-vl-JyK"/>
-                                                <constraint firstItem="ZoD-Kt-AT0" firstAttribute="top" secondItem="N0Q-cS-Xq0" secondAttribute="top" id="ePj-vS-IcO"/>
-                                                <constraint firstItem="ZoD-Kt-AT0" firstAttribute="leading" secondItem="LDO-m2-E6E" secondAttribute="trailing" constant="10" id="l5C-Z9-6sa"/>
                                                 <constraint firstItem="LDO-m2-E6E" firstAttribute="leading" secondItem="N0Q-cS-Xq0" secondAttribute="leadingMargin" id="nhG-rI-wmn"/>
-                                                <constraint firstItem="ZoD-Kt-AT0" firstAttribute="leading" secondItem="rBX-sp-pxK" secondAttribute="trailing" constant="30" id="qcc-dA-IYx"/>
-                                                <constraint firstAttribute="trailing" secondItem="ZoD-Kt-AT0" secondAttribute="trailing" id="rbF-3Y-oHn"/>
+                                                <constraint firstItem="DZD-cS-30z" firstAttribute="leading" secondItem="rBX-sp-pxK" secondAttribute="trailing" constant="20" id="xr1-r6-Ha4"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="GJg-VG-0Bz"/>
                                                     <exclude reference="RnF-vZ-UcD"/>
                                                     <exclude reference="nhG-rI-wmn"/>
-                                                    <exclude reference="l5C-Z9-6sa"/>
-                                                    <exclude reference="qcc-dA-IYx"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="dataLabel" destination="ZoD-Kt-AT0" id="Rqz-t4-mvX"/>
+                                            <outlet property="dataTextView" destination="DZD-cS-30z" id="158-7g-OXU"/>
                                             <outlet property="dateLabel" destination="LDO-m2-E6E" id="ACt-wv-Gi8"/>
                                             <outlet property="idLabel" destination="rBX-sp-pxK" id="k1p-z1-b2K"/>
                                         </connections>
